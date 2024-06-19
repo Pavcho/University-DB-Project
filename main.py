@@ -246,11 +246,9 @@ def create_search_menu_frame(search_result):
         current_y += 30
 
 
-def create_main_menu_frame():
-    main_menu.tkraise()
-
+def create_main_buttons(frame_name):
     button1_menu = ctk.CTkButton(
-        main_menu,
+        frame_name,
         text="Home",
         corner_radius=8,
         height=45,
@@ -262,7 +260,7 @@ def create_main_menu_frame():
 
     # edit worker button
     button2_menu = ctk.CTkButton(
-        main_menu,
+        frame_name,
         text="Edit",
         corner_radius=8,
         height=45,
@@ -274,7 +272,7 @@ def create_main_menu_frame():
 
     # add worker button
     button3_menu = ctk.CTkButton(
-        main_menu,
+        frame_name,
         text="Add",
         corner_radius=8,
         height=45,
@@ -286,7 +284,7 @@ def create_main_menu_frame():
 
     # delete worker button
     button4_menu = ctk.CTkButton(
-        main_menu,
+        frame_name,
         text="Delete",
         corner_radius=8,
         height=45,
@@ -295,6 +293,11 @@ def create_main_menu_frame():
         command=create_delete_menu_frame
     )
     button4_menu.place(x=700, y=15)
+
+
+def create_main_menu_frame():
+    main_menu.tkraise()
+    create_main_buttons(main_menu)
 
     # creating the label for 'search by'
     search_by_label = ctk.CTkLabel(
@@ -420,53 +423,7 @@ def create_main_menu_frame():
 
 def create_edit_menu_frame():
     edit_menu.tkraise()
-
-    button1_menu = ctk.CTkButton(
-        edit_menu,
-        text="Home",
-        corner_radius=8,
-        height=45,
-        width=180,
-        font=("Cosmic Sans", 23),
-        command=create_main_menu_frame
-    )
-    button1_menu.place(x=30, y=15)
-
-    # edit worker button
-    button2_menu = ctk.CTkButton(
-        edit_menu,
-        text="Edit",
-        corner_radius=8,
-        height=45,
-        width=180,
-        font=("Cosmic Sans", 23),
-        command=create_edit_menu_frame
-    )
-    button2_menu.place(x=255, y=15)
-
-    # add worker button
-    button3_menu = ctk.CTkButton(
-        edit_menu,
-        text="Add",
-        corner_radius=8,
-        height=45,
-        width=180,
-        font=("Cosmic Sans", 23),
-        command=create_add_menu_frame
-    )
-    button3_menu.place(x=480, y=15)
-
-    # delete worker button
-    button4_menu = ctk.CTkButton(
-        edit_menu,
-        text="Delete",
-        corner_radius=8,
-        height=45,
-        width=180,
-        font=("Cosmic Sans", 23),
-        command=create_delete_menu_frame
-    )
-    button4_menu.place(x=700, y=15)
+    create_main_buttons(edit_menu)
 
     list_of_workers_label_two = ctk.CTkLabel(
         master=root,
@@ -512,53 +469,7 @@ def create_edit_menu_frame():
 
 def create_add_menu_frame():
     add_menu.tkraise()
-
-    button1_menu = ctk.CTkButton(
-        add_menu,
-        text="Home",
-        corner_radius=8,
-        height=45,
-        width=180,
-        font=("Cosmic Sans", 23),
-        command=create_main_menu_frame
-    )
-    button1_menu.place(x=30, y=15)
-
-    # edit worker button
-    button2_menu = ctk.CTkButton(
-        add_menu,
-        text="Edit",
-        corner_radius=8,
-        height=45,
-        width=180,
-        font=("Cosmic Sans", 23),
-        command=create_edit_menu_frame
-    )
-    button2_menu.place(x=255, y=15)
-
-    # add worker button
-    button3_menu = ctk.CTkButton(
-        add_menu,
-        text="Add",
-        corner_radius=8,
-        height=45,
-        width=180,
-        font=("Cosmic Sans", 23),
-        command=create_add_menu_frame
-    )
-    button3_menu.place(x=480, y=15)
-
-    # delete worker button
-    button4_menu = ctk.CTkButton(
-        add_menu,
-        text="Delete",
-        corner_radius=8,
-        height=45,
-        width=180,
-        font=("Cosmic Sans", 23),
-        command=create_delete_menu_frame
-    )
-    button4_menu.place(x=700, y=15)
+    create_main_buttons(add_menu)
 
     id_label = ctk.CTkLabel(
         master=root,
@@ -652,53 +563,7 @@ def create_add_menu_frame():
 
 def create_delete_menu_frame():
     delete_menu.tkraise()
-
-    button1_menu = ctk.CTkButton(
-        delete_menu,
-        text="Home",
-        corner_radius=8,
-        height=45,
-        width=180,
-        font=("Cosmic Sans", 23),
-        command=create_main_menu_frame
-    )
-    button1_menu.place(x=30, y=15)
-
-    # edit worker button
-    button2_menu = ctk.CTkButton(
-        delete_menu,
-        text="Edit",
-        corner_radius=8,
-        height=45,
-        width=180,
-        font=("Cosmic Sans", 23),
-        command=create_edit_menu_frame
-    )
-    button2_menu.place(x=255, y=15)
-
-    # add worker button
-    button3_menu = ctk.CTkButton(
-        delete_menu,
-        text="Add",
-        corner_radius=8,
-        height=45,
-        width=180,
-        font=("Cosmic Sans", 23),
-        command=create_add_menu_frame
-    )
-    button3_menu.place(x=480, y=15)
-
-    # delete worker button
-    button4_menu = ctk.CTkButton(
-        delete_menu,
-        text="Delete",
-        corner_radius=8,
-        height=45,
-        width=180,
-        font=("Cosmic Sans", 23),
-        command=create_delete_menu_frame
-    )
-    button4_menu.place(x=700, y=15)
+    create_main_buttons(delete_menu)
 
     list_of_workers_label_two = ctk.CTkLabel(
         master=root,
